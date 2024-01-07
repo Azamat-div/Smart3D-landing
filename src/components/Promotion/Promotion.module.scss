@@ -1,0 +1,84 @@
+.root {
+  display: flex;
+  width: 100vw;
+  margin: 4vw 0;
+}
+
+.leftBlock {
+  @include mainTextSize;
+  text-align: end;
+
+  width: 20vw;
+  height: auto;
+  padding-right: 1em;
+  padding-left: 0.5em;
+
+  color: $colorBody;
+  border-right: 1px solid $colorText;
+
+  b {
+    width: 100%;
+  }
+}
+
+.description {
+  width: 45vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: fit-content;
+  color: red;
+}
+
+.middleBlock {
+  @include mainTextSize;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  a {
+    color: red;
+    // align-self: flex-end;
+  }
+}
+
+.rightBlock {
+  align-items: center;
+
+  svg {
+    width: 12vw;
+  }
+}
+
+@media (max-width: 990px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 32px auto;
+  }
+
+  .leftBlock, .middleBlock {
+    width: 100%;
+    text-align: start;
+    padding: 0;
+  }
+
+  .leftBlock {
+    border: none;
+    margin-bottom: 8px;
+  }
+
+  .middleBlock {
+    border-left: 1px solid $colorAccent;
+    padding-left: 8px;
+  }
+
+  .rightBlock {
+    margin: 16px auto 0;
+
+    svg {
+      width: 40vw;
+    }
+  }
+}

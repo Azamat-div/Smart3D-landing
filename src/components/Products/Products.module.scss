@@ -1,0 +1,183 @@
+.root {
+  display: flex;
+  background: $colorSectionBack;
+  margin: 2vw 0 4vw;
+}
+
+.leftColumn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  min-height: 80vh;
+  svg {
+    width: 50%;
+    z-index: 2;
+
+    path {
+      fill: $colorTextInvert;
+    }
+  }
+}
+
+.backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 60vw;
+  padding: 1.5vw 0;
+}
+
+.productsLine {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  margin-bottom: 1vw;
+}
+
+.lineText {
+  width: 12vw;
+  height: 12vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lineTitle {
+  @include mainTextSize;
+  font-weight: bold;
+}
+
+.lineDescription {
+  @include smallTextSize;
+  color: $colorBody;
+}
+
+.product {
+  @include smallTextSize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 9vw;
+  height: 12vw;
+
+  border: 1px solid $colorBody;
+  border-radius: 0.5vw;
+}
+
+.productTitle {
+  color: black;
+  font-weight: 700;
+  white-space: pre;
+  text-align: center;
+}
+
+.productImage {
+  width: 5vw;
+  height: 5vw;
+  margin: 0.5vw 0;
+}
+
+.productDescription {
+  color: $colorBody;
+  text-align: center;
+}
+
+@media (max-width: 990px) {
+  .leftColumn {
+    display: none;
+  }
+
+  .root {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 16px 0 32px;
+  }
+
+  .productsLine {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .lineText {
+    align-items: center;
+    justify-content: center;
+    order: 1;
+    width: 80vw;
+    height: auto;
+    margin-bottom: 32px;
+  }
+
+  .lineTitle {
+    @include h4Size;
+    text-align: center;
+  }
+
+  .lineDescription {
+    @include mainTextSize;
+    margin-left: 4px;
+    text-align: center;
+  }
+
+  .products {
+    width: 80vw;
+    padding: 32px 0;
+  }
+
+  .product {
+    @include mainTextSize;
+    width: 150px;
+    height: 200px;
+    order: 2;
+    border-radius: 8px;
+  }
+
+  .productImage {
+    width: 80px;
+    height: 80px;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: 120px;
+    height: 160px;
+  }
+
+  .productImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    width: 24vw;
+    height: 32vw;
+    margin: 1vw 0;
+    font-size: calc((4px + (16 - 4) * ((100vw - 200px) / (990 - 200))))
+  }
+
+  .productImage {
+    width: 12.8vw;
+    height: 12.8vw;
+  }
+}

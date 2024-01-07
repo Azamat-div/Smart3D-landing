@@ -1,0 +1,41 @@
+.root {
+  position: relative;
+  height: 4vw;
+}
+
+.input {
+  @include h4Size;
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  color: $colorBody;
+  border: none;
+  border: 1px solid black;
+  border-radius: 0.5vw;
+  outline: none;
+}
+
+.placeholder {
+  @include h4Size;
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+  // padding: 0 0 1vw 0;
+  color: $colorBody;
+  transition: 300ms;
+}
+
+.placeholder.isActive {
+  @include h4Size;
+  top: -1.1em;
+  left: 0;
+}
+
+@media (max-width: 990px) {
+  .input {
+    border-radius: 4px;
+  }
+}

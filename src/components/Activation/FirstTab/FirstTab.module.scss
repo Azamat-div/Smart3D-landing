@@ -1,0 +1,557 @@
+.root {
+  display: flex;
+  width: 80vw;
+  padding-top: 5vw;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 2vw;
+  width: 22vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 22vw;
+}
+
+.spinnerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.descriptionBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border: 0.1vw solid black;
+  border-radius: 1vw;
+  width: 24vw;
+  padding-top: 2vw;
+}
+
+.phoneWrapper {
+  position: relative;
+  width: 10vw;
+  margin-bottom: 1vw;
+}
+
+.phoneImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.keyIcon {
+  position: absolute;
+  bottom: -2vw;
+  right: -2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  height: 5vw;
+  border: 0.1vw solid $colorBody;
+  border-radius: 1vw;
+  background: white;
+
+  svg {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.descriptionTitle {
+  @include smallTextSize(1.2);
+  font-weight: 600;
+  color: $colorBody;
+  text-align: center;
+  margin: 1vw 0 0.5vw;
+  width: 15vw;
+}
+
+.descriptionText {
+  @include smallTextSize(1);
+  font-weight: 600;
+  color: $colorBody;
+  text-align: center;
+  width: auto;
+  margin-bottom: 1vw;
+}
+
+.emailInput {
+  margin-top: 4vw;
+  width: 22vw;
+}
+
+.input {
+  width: 22vw;
+}
+
+.hint {
+  @include smallTextSize;
+  width: 22vw;
+  margin-top: 1vw;
+  color: $colorBody;
+}
+
+.chooseText {
+  @include h4Size;
+  font-weight: 100;
+  text-align: center;
+  color: $colorBody;
+
+  width: 100%;
+  margin-top: 1vw;
+}
+
+.radioWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 0.5vw;
+  .pseudoRadio {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5vw;
+    height: 1.5vw;
+    border: 0.1vw solid $colorMain;
+    border-radius: 50%;
+  }
+
+  input {
+    width: 0px;
+    height: 0px;
+  }
+
+  label {
+    @include h4Size;
+    position: relative;
+    margin-left: 2vw;
+    & > .hint {
+      @include smallTextSize;
+      position: absolute;
+      left: 0px;
+      top: 70%;
+    }
+  }
+}
+
+.pseudoRadio.checked::after {
+  content: '';
+  @include absoluteCenter;
+  width: 1vw;
+  height: 1vw;
+  background-color: $colorMain;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.payIcons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-left: 25px;
+  margin-right: 0;
+}
+
+.payIcon {
+  width: 2vw;
+}
+
+.privacyCheck {
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-right: 1vw;
+  margin-left: 0;
+}
+
+.checkboxWrapper {
+  @include mainTextSize;
+  margin: 2vw 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw;
+
+  color: $colorBody;
+
+  label {
+    display: inline-block;
+    flex-direction: row;
+  }
+}
+
+.Link {
+  color: $colorBody;
+  width: 100%;
+}
+
+.bottomLine {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  margin-top: 4vw;
+}
+
+.bottomText {
+  @include mainTextSize(1.2);
+  width: 32vw;
+  padding-top: 2vw;
+}
+
+.submitButton {
+  position: relative;
+  @include h3Size(1.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46vw;
+  text-align: center;
+  background-color: $colorAccent;
+  color: $colorTextInvert;
+  text-decoration: none;
+  border-radius: 0.5vw;
+  height: 2.2em;
+  margin-bottom: 5vw;
+}
+
+.submitButton.disabled {
+  background-color: #fa9b53;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.spinner {
+  @include absoluteCenter;
+}
+
+.oneTime {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translateX(-50%);
+  width: 100%;
+
+  @include mainTextSize;
+  color: red;
+}
+
+.sumBlock {
+  @include h3Size(1.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  color: $colorBody;
+}
+
+.contractWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+  width: 32vw;
+  img {
+    width: 32vw;
+  }
+}
+
+.contractTitle {
+  @include h4Size;
+  margin: 1vw 0;
+}
+
+.contractDescription {
+  @include mainTextSize(0.8);
+}
+
+@media (max-width: 990px) {
+  .root {
+    flex-wrap: wrap;
+    padding-top: 64px;
+  }
+
+  .formWrapper {
+    order: 2;
+    margin: 0;
+    width: 80vw;
+    margin-top: 16px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .spinnerForm {
+    width: 100%;
+    order: 2;
+  }
+
+  .descriptionBlock {
+    order: 0;
+    padding: 16px;
+    border-width: 1px;
+    border-radius: 8px;
+    width: 39vw;
+    margin-right: 1vw;
+  }
+
+  .phoneWrapper {
+    width: 11vw;
+    margin-bottom: 8px;
+  }
+
+  .keyIcon {
+    width: 5vw;
+    height: 5vw;
+    bottom: -1vw;
+    right: -1vw;
+    border-width: 1px;
+    // border-radius: 0.1vw;
+  }
+
+  .descriptionTitle {
+    margin: 16px 0 8px;
+    width: 25vw;
+  }
+
+  .descriptionText {
+    width: 30vw;
+    margin: 0;
+  }
+
+  .emailInput {
+    margin-top: 40px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .input {
+    width: 100%;
+    height: 40px;
+  }
+
+  .hint {
+    @include mainTextSize(0.8);
+    width: 100%;
+    margin-top: 8px;
+    font-weight: bold;
+    color: $colorBody;
+  }
+
+  .chooseText {
+    @include h3Size;
+    color: $colorBody;
+    margin: 32px 0 16px;
+  }
+
+  .radioWrapper {
+    margin-bottom: 16px;
+    .pseudoRadio {
+      width: 24px;
+      height: 24px;
+      border-width: 1px;
+    }
+
+    label {
+      @include h4Size(1.2);
+      margin-left: 24px;
+      & > .hint {
+        @include mainTextSize(0.9);
+      }
+    }
+  }
+
+  .pseudoRadio.checked::after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .payIcon {
+    width: 48px;
+    margin-right: 8px;
+  }
+
+  .privacyCheck {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  .checkboxWrapper {
+    @include mainTextSize;
+    margin: 2vw 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80vw;
+
+    color: $colorBody;
+
+    label {
+      display: inline-block;
+      flex-direction: row;
+    }
+  }
+
+  .Link {
+    color: $colorBody;
+    width: 100%;
+  }
+
+  .bottomLine {
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    margin-top: 32px;
+  }
+
+  .bottomText {
+    @include mainTextSize(1.2);
+    width: 40vw;
+    // padding-left: 2vw;
+    padding-top: 16px;
+  }
+
+  .submitButton {
+    @include h4Size(1.5);
+    border-radius: 4px;
+    height: 3em;
+    width: 80vw;
+    margin-bottom: 32px;
+  }
+
+  .oneTime {
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    @include mainTextSize;
+    color: red;
+  }
+
+  .contractWrapper {
+    order: 1;
+    margin-left: 1vw;
+    width: 39vw;
+    img {
+      width: 39vw;
+    }
+  }
+
+  .contractTitle {
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .root {
+    flex-direction: column;
+    padding-top: 32px;
+  }
+
+  .descriptionBlock {
+    order: 1;
+    border: none;
+    width: 80vw;
+    padding: 0;
+    margin-bottom: 32px;
+  }
+
+  .phoneWrapper {
+    width: 25vw;
+  }
+
+  .descriptionTitle {
+    @include h3Size;
+    width: auto;
+  }
+
+  .descriptionText {
+    @include mainTextSize;
+    width: auto;
+  }
+
+  .contractTitle {
+    @include h3Size;
+    font-weight: bold;
+    margin-bottom: 1vw;
+    margin: 0 auto;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .contractDescription {
+    @include h4Size(1.1);
+    color: $colorBody;
+    // font-weight: 100;
+    width: 80vw;
+    margin: 0.5vw auto 0;
+    text-align: center;
+  }
+
+  .contractWrapper {
+    order: 0;
+    width: 80vw;
+    text-align: center;
+
+    div {
+      margin-bottom: 16px;
+    }
+
+    img {
+      width: 100%;
+      order: 1;
+
+      margin: 16px 0;
+    }
+  }
+
+  .contractTitle,
+  .contractDescription {
+    order: 0;
+    margin-bottom: 16px;
+  }
+
+  .bottomLine {
+    flex-direction: column;
+  }
+
+  .submitButton {
+    @include h3Size;
+    padding: 16px 0;
+    width: 80vw;
+    height: auto;
+    margin: 16px 0;
+  }
+
+  .bottomText {
+    order: 2;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .oneTime {
+    top: -32px;
+  }
+
+  .keyIcon {
+    width: 7vw;
+    height: 7vw;
+    bottom: -0.5vw;
+    right: -0.5vw;
+  }
+}

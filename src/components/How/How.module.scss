@@ -1,0 +1,97 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 4vw;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  height: 5vw;
+  margin-top: 2vw;
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.5vw;
+  width: 7.5vw;
+  border-radius: 50%;
+  background: $colorSectionBack;
+
+  svg {
+    height: 5vw;
+    width: 5vw;
+  }
+}
+
+.text {
+  @include mainTextSize;
+  font-weight: bold;
+  position: absolute;
+  bottom: -3.5vw;
+  white-space: pre-line;
+}
+
+.divider {
+  flex: 1;
+  height: 0.5vw;
+  background: #dde1e9;
+  margin: 0 1vw;
+  border-radius: 1vw;
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  .line {
+    width: 80vw;
+    height: 60px;
+    margin-top: 16px;
+  }
+
+  .iconWrapper {
+    height: 60px;
+    width: 60px;
+
+    svg {
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  .text {
+    bottom: -40px;
+  }
+
+  .divider {
+    height: 2px;
+    margin: 0 8px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .line {
+    height: 54px;
+  }
+
+  .iconWrapper {
+    height: 54px;
+    width: 54px;
+
+    svg {
+      height: 36px;
+      width: 36px;
+    }
+  }
+}

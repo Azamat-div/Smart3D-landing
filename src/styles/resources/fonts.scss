@@ -1,0 +1,69 @@
+@mixin mainTextSize($factor: 1) {
+  font-size: calc((14px + (32 - 14) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(14px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((32px + (64 - 32) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin smallTextSize($factor: 1) {
+  font-size: calc((10px + (20 - 10) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(10px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((24px + (48 - 24) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin h0Size($factor: 1) {
+  font-size: calc((75px + (150 - 75) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(75px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((150px + (300 - 150) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin h1Size($factor: 1) {
+  font-size: calc((50px + (112 - 50) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(50px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((112px + (224 - 112) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin h2Size($factor: 1) {
+  font-size: calc((37.5px + (84 - 37.5) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(37.5px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((84px + (168 - 84) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin h3Size($factor: 1) {
+  font-size: calc((25px + (56 - 25) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(25px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((56px + (112 - 56) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}
+
+@mixin h4Size($factor: 1) {
+  font-size: calc((16px + (32 - 16) * ((100vw - 991px) / (2400 - 991))) * #{$factor});
+  @media (max-width: 990px) {
+    font-size: calc(16px * #{$factor});
+  }
+  @media (min-width: 2400px) {
+    font-size: calc((32px + (64 - 16) * ((100vw - 2400px) / (4800 - 2400))) * #{$factor});
+  }
+}

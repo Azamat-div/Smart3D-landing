@@ -1,0 +1,76 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  margin-bottom: 2vw;
+}
+
+.topLine {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  flex: 1;
+}
+
+.description,
+.title {
+  @include mainTextSize;
+  font-weight: 100;
+  text-align: start;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  height: 0;
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: 300ms ease-in-out;
+}
+
+.showIcon {
+  @include mainTextSize;
+  height: 1em;
+  width: 1em;
+
+  margin: 0 0 0 auto;
+
+  transition: 300ms ease-in-out;
+  transform: translateY(0.3em);
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.description {
+  color: $colorBody;
+}
+
+.root.active {
+  & > .topLine {
+    & > .showIcon {
+      transform: rotate(180deg) translateY(-0.3em);
+      svg path {
+        fill: $blueText;
+      }
+    }
+
+    & > .title {
+      color: $blueText;
+    }
+  }
+  & > .description {
+    height: auto;
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 990px) {
+  .root {
+    width: 80vw;
+  }
+}

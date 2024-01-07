@@ -1,0 +1,90 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 17.5vw;
+  height: 30vw;
+  border: 1px solid black;
+  border-radius: 0.5vw;
+
+  padding: 0 1vw 1vw;
+  background: white;
+}
+
+.title {
+  @include h4Size;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 1vw;
+}
+
+.image {
+  width: 70%;
+  object-fit: cover;
+  margin: auto 0;
+}
+
+.description {
+  @include h4Size(0.7);
+  color: $colorBody;
+  margin: auto 0 0;
+
+  min-height: 9.38vw;
+  width: 15.5vw;
+}
+
+.text {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media (max-width: 990px) {
+  .root {
+    width: 175px;
+    height: 300px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 16px 0;
+  }
+  .title {
+    @include h4Size;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1vw;
+  }
+
+  .image {
+    width: 70%;
+    object-fit: cover;
+    margin: auto 0;
+  }
+
+  .description {
+    margin: auto 0 0;
+    width: unset; 
+    height: 90px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .root {
+    width: 35vw;
+    height: 60vw;
+    border-radius: 4px;
+    padding: 2vw;
+    margin: 2vw 0;
+  }
+  .title {
+    font-size: calc((8px + (24 - 8) * ((100vw - 200px) / (990 - 200))));
+    padding-bottom: 1vw;
+  }
+
+  .description {
+    font-size: calc((4px + (20 - 4) * ((100vw - 200px) / (990 - 200))));
+    font-weight: normal;
+    height: 18vw;
+  }
+}
+

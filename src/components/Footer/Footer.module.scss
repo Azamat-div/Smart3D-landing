@@ -1,0 +1,279 @@
+.root {
+  background: $colorSectionBack;
+  padding: 2vw 10vw;
+}
+
+.firstLine {
+  @include smallTextSize(1.3);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: calc(7em + 3.5vw);
+
+  button {
+    height: calc(7em + 1.5vw);
+    width: calc(5em + 1.5vw);
+    svg {
+      height: calc(7em + 1.5vw);
+      width: calc(5em + 1.5vw);
+    }
+  }
+
+  border-bottom: 1px solid black;
+  padding-bottom: 2vw;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-left: 1.5vw;
+}
+
+.link {
+  margin: 0.25vw 0;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  width: fit-content;
+  margin-left: 1vw;
+  overflow: visible;
+}
+
+.link:after {
+  display: block;
+  content: '';
+  background-color: black;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  position: absolute;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.link:hover:after,
+.link:focus:after {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15vw;
+  height: calc(5em + 3.5vw);
+  margin-right: 0;
+  margin-left: auto;
+
+  button {
+    display: flex;
+    align-items: center;
+    background: black;
+    color: $colorTextInvert;
+    width: 100%;
+    height: 45%;
+
+    border-radius: 0.5vw;
+
+    svg {
+      height: 70%;
+      margin: 0 -1vw;
+    }
+
+    &:first-child svg path {
+      fill: white;
+    }
+
+    & .titleApp {
+      @include smallTextSize(0.8);
+      text-align: start;
+    }
+
+    & .nameApp {
+      @include h4Size(0.8);
+    }
+  }
+}
+
+.secondLine {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 0.5vw;
+}
+
+.rightsText {
+  @include smallTextSize(1.3);
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+
+  a svg {
+    width: 1.5vw;
+    margin: 0 0.25vw;
+  }
+
+  a:last-child svg {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .root {
+    background: $colorSectionBack;
+    padding: 32px 48px;
+  }
+
+  .firstLine {
+    @include smallTextSize(1.3);
+    display: flex;
+    height: 132px;
+
+    svg {
+      height: 132px;
+      width: 90px;
+    }
+
+    border-bottom: 1px solid black;
+    padding-bottom: 32px;
+  }
+
+  .link {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .buttons {
+    width: 150px;
+    height: 100px;
+
+    button {
+      height: 45px;
+
+      border-radius: 8px;
+      width: 150px;
+
+      svg {
+        margin: 0 -16px;
+      }
+    }
+  }
+
+  .secondLine {
+    padding-top: 8px;
+  }
+  .socials {
+    display: flex;
+
+    a svg {
+      width: 16px;
+      margin: 0 4px;
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .firstLine {
+    flex-wrap: wrap;
+    // height: 390px;
+    width: 80vw;
+    height: auto;
+  }
+
+  .links {
+    height: 100px;
+    width: 60vw;
+    margin: 0 auto;
+  }
+
+  .buttons {
+    width: 80vw;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+    height: fit-content;
+
+    button {
+      margin: 0 8px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .root {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+  }
+  .links {
+    height: 120px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .firstLine {
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .links {
+    height: auto;
+    // transform: translateX(50%);
+    margin: 0 0 16px;
+    align-items: center;
+    width: 80vw;
+  }
+
+  .link {
+    text-align: center;
+  }
+
+  .secondLine {
+    width: 80vw;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .root {
+    padding: 0 0;
+  }
+
+  .firstLine {
+    margin: 0;
+  }
+
+  .link {
+    max-width: 80vw;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    button {
+      margin: 8px 0;
+      & .titleApp {
+        font-size: calc((6px + (8 - 6) * ((100vw - 200px) / (990 - 200))));
+      }
+      & .nameApp {
+        font-size: calc((8px + (16 - 8) * ((100vw - 200px) / (990 - 200))));
+        text-align: start;
+      }
+    }
+  }
+}

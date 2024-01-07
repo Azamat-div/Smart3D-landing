@@ -1,0 +1,91 @@
+.root {
+  display: flex;
+  width: 100vw;
+}
+
+.imageWrapper {
+  width: 50vw;
+  height: 30vw;
+  max-height: 100vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding: 2vw;
+  padding-bottom: 0;
+  background: $colorSectionBack;
+  .title {
+    display: block;
+  }
+}
+
+.title {
+  @include h3Size;
+  font-weight: bold;
+  margin-bottom: 1vw;
+  display: none;
+}
+
+.description {
+  @include mainTextSize(1.1);
+  width: 31vw;
+  text-align: start;
+  white-space: pre-line;
+}
+
+@media (max-width: 990px) {
+  .textBlock {
+    padding: 32px;
+    padding-bottom: 0;
+  }
+
+  .title {
+    margin-bottom: 8px;
+  }
+
+  .description {
+    width: 100%;
+    // text-align: center;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .root {
+    flex-direction: column;
+  }
+
+  .imageWrapper {
+    width: 100vw;
+    height: auto;
+  }
+
+  .textBlock {
+    width: 100%;
+    padding: 16px;
+
+    .title {
+      display: none;
+    }
+  }
+
+  .title {
+    display: block;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+}

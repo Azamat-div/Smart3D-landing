@@ -1,0 +1,134 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2vw;
+}
+
+.firstDemo,
+.secondDemo {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  max-height: 60vw;
+  height: 100vh;
+  padding: 2vw;
+  background-size: cover;
+
+  position: relative;
+}
+
+.firstDemo {
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url('https://env-3884663.jcloud.kz/upload/iblock/bf0/bf03b10b8aec6d7e19ab062716b0102c.jpg');
+  border-right: 1px solid $colorTextInvert;
+  & > .items {
+    & > div:last-child {
+      // last DemoItem in the first group
+      margin-right: 0;
+    }
+  }
+}
+
+.secondDemo {
+  background-image: url('https://env-3884663.jcloud.kz/upload/iblock/087/087e5d309e6b6f5be1ee57944769b044.jpg');
+
+  border-left: 1px solid $colorTextInvert;
+  .titleDemo {
+    line-height: 0.8em;
+    margin-bottom: 0.4em;
+    white-space: pre-line;
+  }
+}
+
+.items {
+  display: flex;
+}
+
+.video {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vw;
+}
+
+.titleDemo {
+  @include h0Size(0.7);
+  font-weight: 100;
+  color: $colorTextInvert;
+}
+
+@media (max-width: 990px) {
+  .infoBlock {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .firstDemo,
+  .secondDemo {
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    padding: 16px;
+    border: none;
+
+    & > .items {
+      & > div:last-child {
+        // last DemoItem in the first group
+        margin-right: 0;
+      }
+    }
+  }
+
+  .firstDemo {
+    order: 0;
+  }
+
+  .secondDemo {
+    order: 2;
+    .titleDemo {
+      order: 1;
+      text-align: center;
+      line-height: initial;
+      margin-bottom: 0;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .video {
+    order: 1;
+    margin: 32px 0;
+  }
+
+  .titleDemo {
+    @include h0Size(0.7);
+  }
+}
+
+@media (max-width: 500px) {
+  .titleDemo {
+    @include h1Size(0.7);
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 320px) {
+  .titleDemo {
+    @include h1Size(0.5);
+  }
+}

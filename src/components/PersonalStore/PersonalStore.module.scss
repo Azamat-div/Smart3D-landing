@@ -1,0 +1,157 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.firstLine {
+  @include mainTextSize;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 90vw;
+  align-self: flex-start;
+}
+
+.title {
+  @include h2Size(0.9);
+  font-weight: 300;
+  width: 100%;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+
+.block {
+  height: fit-content;
+  margin: 0 1vw;
+
+  &:first-child {
+    // margin-left: 0;
+  }
+}
+
+.blocksWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rightBlock {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1vw;
+  width: 45vw;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14vw;
+  height: 15vw;
+  border: 1px solid black;
+  border-radius: 0.5vw;
+
+  img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  svg {
+    width: 80%;
+    path {
+      fill: rgb(130, 54, 119);
+    }
+  }
+}
+
+.blueText {
+  @include mainTextSize;
+  color: $blueText;
+  text-align: center;
+  margin-top: 1vw;
+}
+
+.blockDescription {
+  @include mainTextSize;
+  color: $colorBody;
+  text-align: center;
+}
+
+.centerImage {
+  width: 45vw;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.secondLine {
+  @include mainTextSize;
+  width: 100%;
+  margin-top: 2vw;
+  text-align: center;
+}
+
+@media (max-width: 990px) {
+  .firstLine {
+    width: 80vw;
+    align-self: center;
+  }
+  .centerImage {
+    width: 80vw;
+    height: auto;
+  }
+  .title {
+    @include h2Size(0.8);
+    margin-top: 2vw;
+    // order: 1;
+  }
+  .rightBlock {
+    width: 80vw;
+    margin-top: 32px;
+  }
+
+  .blocksWrapper {
+    align-self: center;
+  }
+
+  .imageWrapper {
+    width: 140px;
+    height: 150px;
+    border-radius: 8px;
+  }
+
+  .blueText {
+    @include mainTextSize(1.2);
+    font-weight: bold;
+    margin-top: 16px;
+  }
+
+  .blockDescription {
+    @include mainTextSize(1.2);
+  }
+
+  .secondLine {
+    @include mainTextSize(1.2);
+    width: 80vw;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 330px) {
+  .blocksWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    width: 105px;
+    height: 112.5px;
+    border-radius: 4px;
+  }
+};

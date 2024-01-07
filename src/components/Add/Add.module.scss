@@ -1,0 +1,53 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+
+  margin-top: 4vw;
+  height: 22.3vw;
+
+  img {
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.description {
+  @include h4Size(1);
+  width: 80vw;
+  // font-weight: 100;
+  text-align: center;
+  color: $colorText;
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin-top: 32px;
+    height: max-content;
+
+    padding: 16px 32px;
+
+    img {
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      z-index: -1;
+    }
+    & > div:nth-child(2) {
+      width: 100%;
+      font-weight: normal;
+    }
+  }
+
+  .description {
+    @include h4Size(1);
+    width: 100%;
+    font-weight: 900;
+    width: auto;
+  }
+}

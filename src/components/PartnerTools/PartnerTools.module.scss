@@ -1,0 +1,80 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  margin: 0 auto 4vw;
+}
+
+.tools {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2vw;
+
+  ::after {
+    content: '';
+    position: absolute;
+    left: -20vw;
+    bottom: 1vw; // tool padding
+    height: 9.38vw; // tool description height
+    width: 100vw;
+    background: $colorSectionBack;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin: 0 auto 32px;
+  }
+
+  .tools {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    justify-content: space-around;
+
+    ::after {
+      content: none;
+    }
+
+    & > div:nth-child(1) {
+      grid-row-start: 1;
+      position: relative;
+
+      ::after {
+        content: '';
+        position: absolute;
+        left: -20vw;
+        bottom: 1vw; // tool padding
+        height: 90px; // tool description height
+        width: 100vw;
+        background: $colorSectionBack;
+        z-index: -1;
+      }
+    }
+    & > div:nth-child(2) {
+      grid-row-start: 1;
+    }
+    
+    & > div:nth-child(3) {
+      grid-row-start: 2;
+      position: relative;
+
+      ::after {
+        content: '';
+        position: absolute;
+        left: -20vw;
+        bottom: 1vw; // tool padding
+        height: 90px; // tool description height
+        width: 100vw;
+        background: $colorSectionBack;
+        z-index: -1;
+      }
+    }
+    & > div:nth-child(4) {
+      grid-row-start: 2;
+    }
+  }
+}

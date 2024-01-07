@@ -1,0 +1,53 @@
+@import './utils/index.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  height: fit-content;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title {
+  @include h3Size;
+  font-weight: bold;
+  margin-bottom: 1vw;
+  margin: 0 auto;
+  width: 80vw;
+  text-align: center;
+}
+
+.descriptionTitle {
+  @include h4Size(1.1);
+  color: $colorBody;
+  // font-weight: 100;
+  width: 80vw;
+  margin: 0.5vw auto 0;
+  text-align: center;
+}
+
+@media (max-width: 990px) {
+  .title {
+    @include h3Size(0.8);
+    margin: 0 auto;
+  }
+
+  .descriptionTitle {
+    @include h4Size(1.1);
+    margin: 8px auto 0 auto;
+  }
+}

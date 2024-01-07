@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vw 0 4vw;
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin: 16px 0 32px;
+  }
+}

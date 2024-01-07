@@ -1,0 +1,76 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: $colorSectionBack;
+
+  margin: 9vw 0 4vw;
+}
+
+.textBanner {
+  @include absoluteCenter;
+
+  text-align: center;
+  color: $colorTextInvert;
+  font-weight: 100;
+
+  & > .firstRow {
+    font-size: 2em;
+    white-space: pre;
+  }
+
+  & > .secondRow {
+    font-size: 3.2em;
+  }
+}
+
+.divider {
+  width: 3vw;
+  height: 2px;
+  background: $colorAccent;
+}
+
+.tabSwitcher {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+
+  z-index: 2;
+
+  & > span,
+  & > button {
+    @include h3Size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $colorTextInvert;
+    background-color: $colorAccent;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+
+    margin: 0.5vw;
+  }
+
+  & > span:first-child {
+    cursor: pointer;
+  }
+
+  & > span:last-child {
+    cursor: default;
+  }
+
+  & > .active {
+    background-color: $blueText;
+  }
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin: 48px 0;
+  }
+}

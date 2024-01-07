@@ -1,0 +1,19 @@
+.root {
+  width: 80vw;
+  height: 40vw;
+  margin: 2vw 0 4vw;
+}
+
+.frame {
+  border-radius: 1vw;
+}
+
+@media (max-width: 990px) {
+  .root {
+    margin: 16px 0 32px;
+  }
+
+  .frame {
+    border-radius: 16px;
+  }
+}
