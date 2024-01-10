@@ -83,11 +83,11 @@ export const useMakeOrder = () => {
     // }
 
     // window.open(
-    //   `https://env-3884663.jcloud.kz/pay.php?ORDER_ID=${response.ID}&PAYMENT_ID=${response.TRANSACTIONS[0].PAYMENT_ID}&AMOUNT=${response.TRANSACTIONS[0].SUM}&CURRENCY=USD`,
+    //   `https://node49700-env-3541556.jcloud.kz/pay.php?ORDER_ID=${response.ID}&PAYMENT_ID=${response.TRANSACTIONS[0].PAYMENT_ID}&AMOUNT=${response.TRANSACTIONS[0].SUM}&CURRENCY=USD`,
     //   '_self',
     // );
 
-    const url = `https://env-3884663.jcloud.kz/pay.php?ORDER_ID=${response.ID}&PAYMENT_ID=${response.TRANSACTIONS[0].PAYMENT_ID}&AMOUNT=${response.TRANSACTIONS[0].SUM}&CURRENCY=USD`;
+    const url = `https://node49700-env-3541556.jcloud.kz/pay.php?ORDER_ID=${response.ID}&PAYMENT_ID=${response.TRANSACTIONS[0].PAYMENT_ID}&AMOUNT=${response.TRANSACTIONS[0].SUM}&CURRENCY=USD`;
     return url;
   };
 
